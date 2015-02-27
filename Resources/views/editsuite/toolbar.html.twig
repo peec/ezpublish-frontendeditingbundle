@@ -1,0 +1,7 @@
+
+
+{% if is_granted( 'IS_AUTHENTICATED_FULLY' ) %}
+<nav class="editor-toolbar"  role="navigation">
+    <div class="angular-pane" ui-view="app"></div>
+</nav>
+{% endif %}

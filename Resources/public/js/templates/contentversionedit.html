@@ -1,0 +1,10 @@
+
+<form ng-submit="saveContent()">
+    <div ng-repeat="(key, fieldDef) in fieldDefinitions" class="form-group">
+        <label>{{ fieldDef.computed.name }}</label>
+        <div render-field-type fill-defaults="fillDefaults" type="fieldDef" ng-model="versionObject.Version.Fields.field[key]"></div>
+
+    </div>
+
+    <button type="submit" class="btn btn-default">Save</button>
+</form>

@@ -1,0 +1,19 @@
+{
+    "name": "siter/frontendeditingbundle",
+    "description": "Siter Frontend Editing Bundle for eZ Publish Platform",
+    "license": "GPL-2.0",
+    "authors": [
+        {
+            "name": "Petter Kjelkenes",
+            "homepage": "http://pkj.no"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=5.3.3"
+    },
+    "autoload": {
+        "psr-0": {"Siter\\FrontendEditingBundle": ""}
+    },
+    "target-dir": "Siter/FrontendEditingBundle"
+}

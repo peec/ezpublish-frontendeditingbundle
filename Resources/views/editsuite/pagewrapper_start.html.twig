@@ -1,0 +1,11 @@
+{# Must be used together with pagewrapper_end.html.twig #}
+{% if is_granted( 'IS_AUTHENTICATED_FULLY' ) %}
+<div id="wrapper" class="toggled-left toggled-right">
+    <div class="sidebar-wrapper" id="sidebar-wrapper-left">
+        <div ui-view="left"></div>
+    </div>
+    <div class="sidebar-wrapper" id="sidebar-wrapper-right">
+        <div ui-view="right"></div>
+    </div>
+    <div id="page-content-wrapper">
+{% endif %}

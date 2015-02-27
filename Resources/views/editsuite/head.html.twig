@@ -1,0 +1,64 @@
+
+
+{% if is_granted( 'IS_AUTHENTICATED_FULLY' ) %}
+
+    <script>
+
+        window.SiterEditorialTemplates = {
+
+            {# Render templates to editor#}
+            {% javascripts '@SiterFrontendEditingBundle/Resources/public/js/templates/contentedit.html' output='js/templates/contentedit.html' %}contentedit: '{{ asset_url }}',{% endjavascripts %}
+            {% javascripts '@SiterFrontendEditingBundle/Resources/public/js/templates/contentversionedit.html' output='js/templates/contentversionedit.html' %}contentversionedit: '{{ asset_url }}',{% endjavascripts %}
+            {% javascripts '@SiterFrontendEditingBundle/Resources/public/js/templates/contentversionedit_actions.html' output='js/templates/contentversionedit_actions.html' %}contentversionedit_actions: '{{ asset_url }}',{% endjavascripts %}
+            {% javascripts '@SiterFrontendEditingBundle/Resources/public/js/templates/contentcreate_actions.html' output='js/templates/contentcreate_actions.html' %}contentcreate_actions: '{{ asset_url }}',{% endjavascripts %}
+            {% javascripts '@SiterFrontendEditingBundle/Resources/public/js/templates/location_browse.html' output='js/templates/location_browse.html' %}location_browse: '{{ asset_url }}',{% endjavascripts %}
+
+
+            fieldtypes: {
+                {% javascripts '@SiterFrontendEditingBundle/Resources/public/js/templates/fieldtypes/ezstring.html' output='js/templates/fieldtypes/ezstring.html' %}ezstring: '{{ asset_url }}',{% endjavascripts %}
+                {% javascripts '@SiterFrontendEditingBundle/Resources/public/js/templates/fieldtypes/ezboolean.html' output='js/templates/fieldtypes/ezboolean.html' %}ezboolean: '{{ asset_url }}',{% endjavascripts %}
+                {% javascripts '@SiterFrontendEditingBundle/Resources/public/js/templates/fieldtypes/ezurl.html' output='js/templates/fieldtypes/ezurl.html' %}ezurl: '{{ asset_url }}',{% endjavascripts %}
+                {% javascripts '@SiterFrontendEditingBundle/Resources/public/js/templates/fieldtypes/ezxmltext.html' output='js/templates/fieldtypes/ezxmltext.html' %}ezxmltext: '{{ asset_url }}',{% endjavascripts %}
+                {% javascripts '@SiterFrontendEditingBundle/Resources/public/js/templates/fieldtypes/ezobjectrelation.html' output='js/templates/fieldtypes/ezobjectrelation.html' %}ezobjectrelation: '{{ asset_url }}',{% endjavascripts %}
+                {% javascripts '@SiterFrontendEditingBundle/Resources/public/js/templates/fieldtypes/ezinteger.html' output='js/templates/fieldtypes/ezinteger.html' %}ezinteger: '{{ asset_url }}'{% endjavascripts %}
+            }
+
+        };
+    </script>
+
+
+
+    <!-- libs -->
+    {% javascripts
+    '@SiterFrontendEditingBundle/Resources/public/js/angular.min.js'
+    '@SiterFrontendEditingBundle/Resources/public/js/angular/ngDraggable/ngDraggable.js'
+    '@SiterFrontendEditingBundle/Resources/public/js/angular/angular-ui-router.min.js'
+    %}
+    <script type="text/javascript" src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+
+
+    <!-- editor app -->
+    {% javascripts
+    '@SiterFrontendEditingBundle/Resources/public/js/editsuite/app.js'
+    '@SiterFrontendEditingBundle/Resources/public/js/editsuite/api.js'
+    '@SiterFrontendEditingBundle/Resources/public/js/editsuite/controllers.js'
+    '@SiterFrontendEditingBundle/Resources/public/js/editsuite/helpers.js'
+    '@SiterFrontendEditingBundle/Resources/public/js/editsuite/services.js'
+    '@SiterFrontendEditingBundle/Resources/public/js/editsuite/routes.js'
+    '@SiterFrontendEditingBundle/Resources/public/js/editsuite/fieldtypes/*.js'
+    %}
+    <script type="text/javascript" src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+
+    <!-- editor css -->
+
+    {% stylesheets filter='less'
+    '@SiterFrontendEditingBundle/Resources/less/editsuite.less'
+    %}
+    <link rel="stylesheet" type="text/css" href="{{ asset_url }}"/>
+    {% endstylesheets %}
+
+
+
+{% endif %}

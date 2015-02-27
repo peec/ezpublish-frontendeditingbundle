@@ -1,0 +1,16 @@
+<p ng-show="pathArray.length > 3"><span ng-click="previousLevel()" class="fa fa-arrow-left"></span></p>
+
+<div class="child-location-container">
+    <div class="row"  ng-repeat="location in childLocations" class="child-location-item" >
+
+        <div class="col-xs-11">
+            <input ng-show="actionEnabled.pick_single" name="selectedItems" type="checkbox" ng-click="selectItem(location)" />
+            <input ng-show="actionEnabled.pick_multiple" name="selectedItems" type="checkbox" ng-click="selectItem(location)" />
+
+            {{location.Content.Name}}
+        </div>
+        <div class="col-xs-1" ng-click="navigateTo(location)">
+            <span class="fa fa-chevron-right pull-right"></span>
+        </div>
+    </div>
+</div>
