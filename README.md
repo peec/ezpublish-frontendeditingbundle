@@ -32,7 +32,25 @@ Your pagelayout needs to use boostrap and font-awesome in order for the frontend
 
 ## INSTALLATION
 
-#### 1. Setup less filter.
+#### 1. Add to your composer.json
+
+Add this to composer.json:
+
+```json
+"require": {
+     "siter/ezpublish-frontendeditingbundle": "@dev"
+}
+```
+
+and run:
+
+```bash
+composer update siter/ezpublish-frontendeditingbundle
+```
+
+
+
+#### 2. Setup less filter.
 
 This bundle includes less files for the CSS of the frontend editing, you you need to setup less.
 
@@ -52,7 +70,7 @@ assetic:
             apply_to: "\.less$"
 ```
 
-#### 2. Configure AppKernel and import routes.
+#### 3. Configure AppKernel and import routes.
 
 Edit the `ezpublish/EzPublishKernel.php` and add:
 
@@ -68,7 +86,7 @@ siter_frontend_editing:
     prefix:   /frontendediting
 ```
 
-#### 3. Dump assets.
+#### 4. Dump assets.
 
 Dump asset for prod and dev. change --env.
 
